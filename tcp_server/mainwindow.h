@@ -30,10 +30,11 @@ public slots:
     void slot_for_tcp_listen_btn();
     void slot_for_tcp_close_btn();
     void slot_for_new_tcp_client();
-    void slot_for_tcp_client_disconnect();
 
+    void slot_for_receive_data();
+
+    void slot_for_tcp_client_disconnect();
     void slot_for_client();
-    void slot_for_disclient();
 };
 
 #endif // MAINWINDOW_H

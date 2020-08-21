@@ -58,6 +58,7 @@ void MainWindow::slot_for_tcp_close_btn(){
     }
 }
 
+//调试用
 void MainWindow::slot_for_tcp_client_disconnect(){
     qDebug() << "slot_for_tcp_client_disconnect" << socketList.length();
     for(int i=0;i<socketList.length();i++){
@@ -70,6 +71,7 @@ void MainWindow::slot_for_tcp_client_disconnect(){
     }
 }
 
+//调试用
 void MainWindow::slot_for_client(){
     myClient = new QTcpSocket(this);
     if(myClient){
@@ -86,9 +88,14 @@ void MainWindow::slot_for_new_tcp_client(){
         socketList.append(client);
         clientNUms++;
         QObject::connect(client,&QTcpSocket::disconnected,this,&MainWindow::slot_for_tcp_client_disconnect);
+        QObject::connect(client,&QTcpSocket::readyRead,this,&MainWindow::slot_for_receive_data);
     }
 }
 
-void MainWindow::slot_for_disclient(){
-
+void MainWindow::slot_for_receive_data(){
+    qDebug() << "slot_for_receive_data";
+    QObject* obj = QObject::sender();
+    QTcpSocket* client = qobject_cast<QTcpSocket*>(obj);
+    //得到了发送数据过来的client
+    ui->textBrowser->append(QString(client->readAll()));
 }
