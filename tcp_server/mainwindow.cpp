@@ -96,6 +96,10 @@ void MainWindow::slot_for_receive_data(){
     qDebug() << "slot_for_receive_data";
     QObject* obj = QObject::sender();
     QTcpSocket* client = qobject_cast<QTcpSocket*>(obj);
+    QByteArray baData = client->readAll();
+    QString receiveData(baData);
     //得到了发送数据过来的client
-    ui->textBrowser->append(QString(client->readAll()));
+    ui->textBrowser->append(receiveData);
+    //respond
+    client->write(baData.data(),baData.length());
 }
