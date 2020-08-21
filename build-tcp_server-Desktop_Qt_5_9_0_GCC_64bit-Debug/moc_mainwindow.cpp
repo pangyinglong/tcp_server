@@ -22,7 +22,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
     QByteArrayData data[8];
-    char stringdata0[149];
+    char stringdata0[152];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -36,15 +36,16 @@ QT_MOC_LITERAL(1, 11, 23), // "slot_for_tcp_listen_btn"
 QT_MOC_LITERAL(2, 35, 0), // ""
 QT_MOC_LITERAL(3, 36, 22), // "slot_for_tcp_close_btn"
 QT_MOC_LITERAL(4, 59, 23), // "slot_for_new_tcp_client"
-QT_MOC_LITERAL(5, 83, 30), // "slot_for_tcp_client_disconnect"
-QT_MOC_LITERAL(6, 114, 15), // "slot_for_client"
-QT_MOC_LITERAL(7, 130, 18) // "slot_for_disclient"
+QT_MOC_LITERAL(5, 83, 21), // "slot_for_receive_data"
+QT_MOC_LITERAL(6, 105, 30), // "slot_for_tcp_client_disconnect"
+QT_MOC_LITERAL(7, 136, 15) // "slot_for_client"
 
     },
     "MainWindow\0slot_for_tcp_listen_btn\0\0"
     "slot_for_tcp_close_btn\0slot_for_new_tcp_client\0"
+    "slot_for_receive_data\0"
     "slot_for_tcp_client_disconnect\0"
-    "slot_for_client\0slot_for_disclient"
+    "slot_for_client"
 };
 #undef QT_MOC_LITERAL
 
@@ -89,9 +90,9 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 0: _t->slot_for_tcp_listen_btn(); break;
         case 1: _t->slot_for_tcp_close_btn(); break;
         case 2: _t->slot_for_new_tcp_client(); break;
-        case 3: _t->slot_for_tcp_client_disconnect(); break;
-        case 4: _t->slot_for_client(); break;
-        case 5: _t->slot_for_disclient(); break;
+        case 3: _t->slot_for_receive_data(); break;
+        case 4: _t->slot_for_tcp_client_disconnect(); break;
+        case 5: _t->slot_for_client(); break;
         default: ;
         }
     }
